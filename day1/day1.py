@@ -1,4 +1,4 @@
-#problems_1-2.py
+#day1.py
 
 import numpy as np
 import pandas as pd
