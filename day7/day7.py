@@ -13,6 +13,12 @@ def read_file(file):
 	return d
 
 def generate_possibilities(start_array,next_val,target, use_concatenation):
+	'''
+	Generates all valid combinations of current array plus one more element. 
+	Prunes any solutions that exceed the target (since all operations monotonically increase values)
+	Exponential growth, but ok because max seq length is 12
+	'''
+
 	start_array = np.array(start_array)
 	plus = start_array + next_val
 	mul = start_array * next_val
@@ -26,15 +32,17 @@ def generate_possibilities(start_array,next_val,target, use_concatenation):
 def check_line(target,seq, use_concatenation):
 	start_array = np.array(seq[:1])
 
-	for i, next_val in enumerate(seq[1:]):
+	for i, next_val in enumerate(seq[1:]): #Iterate through whole array
 		start_array = generate_possibilities(start_array, next_val, target, use_concatenation)
 
-	if target in start_array:
+	if target in start_array: # check if after incorporating the last element, the target value was generated
 		return True
 	return False
 
 
-def p12(d, use_concatenation):
+def p12(d, use_concatenation = False):
+	'''p1 and p2 are the same calculation except p2 uses concatenation'''
+
 	total_calibration_result = 0
 	for target, seq in d.items():
 		if check_line(target,seq, use_concatenation):
@@ -49,7 +57,7 @@ if __name__ == '__main__':
 	test = read_file('test_data_day7.txt')
 	real = read_file('data_day7.txt')
 
-	p12(real, use_concatenation = False)
+	p12(real)
 	p12(real, use_concatenation = True)
 
 
