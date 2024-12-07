@@ -1,5 +1,6 @@
 # day7.py
 import numpy as np
+import time
 
 
 def read_file(file):
@@ -57,8 +58,12 @@ if __name__ == '__main__':
 	test = read_file('test_data_day7.txt')
 	real = read_file('data_day7.txt')
 
-	p12(real)
-	p12(real, use_concatenation = True)
+	p1_start = time.time()
+	print(f'p1: {p12(real)} in {(time.time() - p1_start):.6f} seconds')
+
+	p2_start = time.time()
+	print(f'p2: {p12(real,use_concatenation = True)} in {(time.time() - p2_start):.6f} seconds')
+
 
 
 
