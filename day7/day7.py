@@ -17,7 +17,6 @@ def generate_possibilities(start_array,next_val,target, use_concatenation):
 	plus = start_array + next_val
 	mul = start_array * next_val
 	if use_concatenation:
-		#print(start_array)
 		concat = np.array([int(y+str(next_val)) for y in [str(x) for x in start_array]])
 		return np.concatenate([plus[np.where(plus <= target)], mul[np.where(mul <= target)], concat[np.where(concat <= target)]])
 	else:
@@ -26,12 +25,9 @@ def generate_possibilities(start_array,next_val,target, use_concatenation):
 
 def check_line(target,seq, use_concatenation):
 	start_array = np.array(seq[:1])
-	#print(f'{start_array = }, {target = }')
 
 	for i, next_val in enumerate(seq[1:]):
-		#print(f'{next_val = }')
 		start_array = generate_possibilities(start_array, next_val, target, use_concatenation)
-		#print(f'2: {start_array}')
 
 	if target in start_array:
 		return True
@@ -42,7 +38,6 @@ def p12(d, use_concatenation):
 	total_calibration_result = 0
 	for target, seq in d.items():
 		if check_line(target,seq, use_concatenation):
-			#rint(f'success: {target = }, {seq = }')
 			total_calibration_result += target
 
 	print(f'Total calibration result: {total_calibration_result}')
