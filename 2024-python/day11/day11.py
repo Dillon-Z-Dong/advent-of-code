@@ -33,10 +33,6 @@ def p1(line, n):
 	for blink in range(n):
 		line = evolve_list(line)
 		print(f'length after blinking {blink} times: {len(line)} in time: {time.time()-start}')
-		#print(f'line: {line}')
-	#return line
-
-
 
 
 def precompute_cache(n, max_iters):
