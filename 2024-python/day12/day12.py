@@ -50,6 +50,7 @@ def construct_graph(arr):
 		val_island_index = 0
 
 		# check all nodes including self for connectivity if node1 is not already part of an island
+		# ----> note for reimplimentation: realizing after the fact that doing a simple search would've been way better
 		for node1 in G.nodes:
 			if node1 not in part_of_island:
 				current_island = []
