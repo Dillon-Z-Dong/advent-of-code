@@ -100,7 +100,6 @@ def p2(data):
     print(f'P2 total cost: {int(np.sum(costs))}')
 
     return presses, costs
-    return 
 
 if __name__ == '__main__':
 
