@@ -89,7 +89,7 @@ def p2(data):
     = the total shortest path
 
     Proof:
-    in the pudding
+    by prayer / in the pudding
 
     Note G is not a digraph so you don't need to invert the graph
     """
@@ -137,7 +137,6 @@ def p2(data):
     return
 
 if __name__ == '__main__':
-    # Choose appropriate load function after seeing the input
     test = load_grid(f'test_data_day16.txt')
     real = load_grid(f'data_day16.txt')
 
