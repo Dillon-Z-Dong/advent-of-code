@@ -63,11 +63,13 @@ def p1(data):
 
 
 def count_paths(G, start, end, memo = None):
+    '''Dynamic programming approach to counting paths, avoid repeats'''
+
     if memo is None:
         memo = {}
 
     if start == end:
-        return True
+        return 1
 
     if start in memo:
         return memo[start]
