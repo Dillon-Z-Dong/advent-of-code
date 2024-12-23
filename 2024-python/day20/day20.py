@@ -28,7 +28,6 @@ def get_neighbors(nodes, x_coords, y_coords, sep = 1):
 
 
 def p1(data, thresh):
-    """Solution for part 1"""
     mp, start, end = data
 
     y_coords, x_coords = np.where(np.isin(mp, ['.','S','E']))
@@ -66,7 +65,6 @@ def p1(data, thresh):
     return
 
 def p2(data, thresh):
-    """Solution for part 2"""
     mp, start, end = data
 
     y_coords, x_coords = np.where(np.isin(mp, ['.','S','E']))
@@ -108,7 +106,6 @@ def p2(data, thresh):
     return
 
 if __name__ == '__main__':
-    # Choose appropriate load function after seeing the input
     test = load(f'test_data_day20.txt')
     real = load(f'data_day20.txt')
     
